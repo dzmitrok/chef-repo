@@ -1,0 +1,11 @@
+DEPENDENCIES
+  jboss7
+    path: .
+    metadata: true
+
+GRAPH
+  apt (2.4.0)
+  java (1.22.0)
+  jboss7 (0.11.0)
+    apt (>= 0.0.0)
+    java (>= 0.0.0)
