@@ -101,7 +101,7 @@ end
 
 service 'jboss' do
   provider Chef::Provider::Service::Init::Debian
-  restart_command "service jboss stop; sleep 10; nohup service jboss start >/dev/null 2>&1 &"
-  start_command "nohup service jboss start >/dev/null 2>&1 &"
+  restart_command "/etc/init.d/jboss stop; sleep 10; nohup /etc/init.d/jboss start >/dev/null 2>&1 &"
+  start_command "nohup /etc/init.d/jboss start >/dev/null 2>&1 &"
   action [ :nothing ]
 end
