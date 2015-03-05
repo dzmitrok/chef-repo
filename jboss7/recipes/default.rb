@@ -22,7 +22,7 @@ user jboss_user do
 	comment "jboss User"
 	home "/home/#{jboss_user}"
 	shell "/bin/bash"
-	supports :manage_home => true 
+	supports :manage_home => true
 end
 
 remote_file "#{jboss_home}/#{tarball_name}.tar.gz" do
@@ -52,7 +52,7 @@ link "#{jboss_home}/jboss" do
 end
 
 template "/etc/init.d/jboss" do
-  source "jboss-init-debian.erb"
+  source "jboss-init-CentOS.erb"
   mode 0775
   owner "root"
   group "root"
