@@ -51,6 +51,24 @@ link "#{jboss_home}/jboss" do
 	to "#{jboss_home}/#{tarball_name}"
 end
 
+directory "#{jboss_home}/jboss-as" do
+	owner jboss_user
+	group jboss_user
+	mode "0755"
+	recursive true
+end
+
+template "/etc/jboss-as/jboss-as.conf" do
+ source "jboss-as.conf"
+ owner jboss_user
+ group jboss_user
+ mode "0755"
+ variables({
+ :jboss_user => node['jboss7']['jboss_user']
+ :jboss_home => node"#{jboss_home}/#{tarball_name}"
+ })
+end
+
 template "/etc/init.d/jboss" do
   source "jboss-init-CentOS.erb"
   mode 0775
@@ -65,8 +83,8 @@ end
 
 template "#{jboss_home}/jboss/standalone/configuration/standalone.xml" do
 	source "standalone_xml.erb"
-	owner "web"
-	group "web"
+	owner jboss_user
+	group jboss_user
 	mode "0644"
 	variables({
       :mgmt_bind_addr  => node['jboss7']['mgmt_bind_addr'],
@@ -81,8 +99,8 @@ end
 
 template "#{jboss_home}/jboss/bin/standalone.conf" do
 	source "standalone_conf.erb"
-	owner "web"
-	group "web"
+	owner jboss_user
+	group jboss_user
 	mode "0644"
 	variables({
       :jvm_min_mem  => node['jboss7']['jvm_min_mem'],
