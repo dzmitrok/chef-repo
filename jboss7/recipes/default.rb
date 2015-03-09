@@ -51,7 +51,7 @@ link "#{jboss_home}/jboss" do
 	to "#{jboss_home}/#{tarball_name}"
 end
 
-directory "#{jboss_home}/jboss-as" do
+directory "/etc/jboss-as" do
 	owner jboss_user
 	group jboss_user
 	mode "0755"
@@ -59,14 +59,16 @@ directory "#{jboss_home}/jboss-as" do
 end
 
 template "/etc/jboss-as/jboss-as.conf" do
- source "jboss-as.conf"
+ source "jboss-as.erb"
+
+ variables({
+            :jboss_user => node['jboss7']['jboss_user'],
+            :jboss_home => node['jboss7']['jboss_home']
+            })
+
  owner jboss_user
  group jboss_user
  mode "0755"
- variables({
- :jboss_user => node['jboss7']['jboss_user']
- :jboss_home => node"#{jboss_home}/#{tarball_name}"
- })
 end
 
 template "/etc/init.d/jboss" do
