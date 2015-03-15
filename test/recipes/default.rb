@@ -112,11 +112,11 @@ template "#{jboss_home}/jboss/bin/standalone.conf" do
 	notifies :restart, "service[jboss]", :delayed
 end
 
-jboss_user node['test']['admin_user'] do
-	password node['test']['admin_pass']
-	action :create
-	notifies :restart, "service[jboss]", :delayed
-end
+#jboss_user node['test']['admin_user'] do
+#	password node['test']['admin_pass']
+#	action :create
+#	notifies :restart, "service[jboss]", :delayed
+#end
 
 service 'jboss' do
   provider Chef::Provider::Service::Init::Debian
