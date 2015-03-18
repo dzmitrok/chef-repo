@@ -2,7 +2,7 @@
 # Cookbook Name:: test
 # Recipe:: default
 #
-# Copyright (C) 2015 dzmitry Vasilyeu
+# Copyright (C) 2015 Dzmitry Vasilyeu
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -44,7 +44,7 @@ end
 execute "untar-jboss" do
 	cwd node['test']['jboss_home']
 	command "tar -xzf #{tarball_name}.tar.gz;chown -R #{jboss_user}.#{jboss_user} #{tarball_name}"
-	creates "#{jboss_home}/#{tarball_name}/standalone/config/standalone.xml"
+	creates "#{jboss_home}/#{tarball_name}/standalone/configuration/standalone.xml"
 	action :nothing
 end
 
