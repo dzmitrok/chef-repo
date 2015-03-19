@@ -1,0 +1,31 @@
+{
+  "name": "jboss7",
+  "description": "Installs/Configures jboss7",
+  "long_description": "Installs/Configures jboss7",
+  "maintainer": "Andrew DuFour",
+  "maintainer_email": "andy.k.dufour@gmail.com",
+  "license": "All rights reserved",
+  "platforms": {
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0",
+    "java": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.11.1"
+}
