@@ -1,5 +1,5 @@
-default['test']['jboss_home'] = "/etc"
-default['test']['jboss_path'] = "/etc/jboss-as-7.1.1.Final"
+default['test']['jboss_home'] = "/opt"
+default['test']['jboss_path'] = "/opt/jboss-as-7.1.1.Final"
 default['test']['jboss_user'] = "web"
 default['test']['dl_url'] = "http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.tar.gz"
 default['test']['jvm_min_mem'] = "512m"
