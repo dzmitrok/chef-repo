@@ -12,7 +12,7 @@ include_recipe 'java'
 
 jboss_home = node['test']['jboss_home']
 jboss_user = node['test']['jboss_user']
-
+jboss_path = node['test']['jboss_path']
 
 tarball_name = node['test']['dl_url'].
 	split('/')[-1].
