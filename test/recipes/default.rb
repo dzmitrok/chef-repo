@@ -12,7 +12,6 @@ include_recipe 'java'
 
 jboss_home = node['test']['jboss_home']
 jboss_user = node['test']['jboss_user']
-jboss_path = node['test']['jboss_path']
 
 tarball_name = node['test']['dl_url'].
 	split('/')[-1].
@@ -63,7 +62,7 @@ template "/etc/jboss-as/jboss-as.conf" do
  source "jboss-as.erb"
  variables({
             :jboss_user => node['test']['jboss_user'],
-            :jboss_home => node['test']['jboss_home']
+            :jboss_path => node['test']['jboss_path']
             })
  owner jboss_user
  group jboss_user
@@ -112,11 +111,11 @@ template "#{jboss_home}/jboss/bin/standalone.conf" do
 	notifies :restart, "service[jboss]", :delayed
 end
 
-#jboss_user node['test']['admin_user'] do
-#	password node['test']['admin_pass']
-#	action :create
-#	notifies :restart, "service[jboss]", :delayed
-#end
+jboss7_user node['test']['admin_user'] do
+	password node['test']['admin_pass']
+	action :create
+	notifies :restart, "service[jboss]", :delayed
+end
 
 service 'jboss' do
   provider Chef::Provider::Service::Init
