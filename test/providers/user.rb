@@ -24,7 +24,7 @@ def whyrun_supported?
 	true
 end
 
-action :create do 
+action :create do
 	if @current_resource.exists
 		Chef::Log.info "#{ @new_resource } already exists - nothing to do."
 	else
@@ -45,7 +45,7 @@ action :delete do
 end
 
 def load_current_resource
-	@current_resource = Chef::Resource::Jboss7User.new(@new_resource.name)
+	@current_resource = Chef::Resource::Jboss7_user.new(@new_resource.name)
 	@current_resource.user_name(@new_resource.user_name)
 	@current_resource.password(@new_resource.password)
 
@@ -97,4 +97,3 @@ def delete_jboss_user
 
 	new_resource.updated_by_last_action(true)
 end
-
