@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: jboss7
+# Cookbook Name:: test
 # Resource:: jboss_users
 #
 # Copyright 2014 Andrew DuFour
@@ -25,4 +25,3 @@ attribute :user_name, :name_attribute => true, :kind_of => String, :required => 
 attribute :password,	:kind_of => String
 
 attr_accessor :exists
-

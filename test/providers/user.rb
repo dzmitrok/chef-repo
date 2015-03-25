@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: test
-# Provider:: Jboss7_users
+# Provider:: jboss_users
 #
 # Copyright 2014 Andrew DuFour
 #
@@ -29,7 +29,7 @@ action :create do
 		Chef::Log.info "#{ @new_resource } already exists - nothing to do."
 	else
 		converge_by("Create #{ @new_resource }") do
-			create_Jboss7_user
+			create_jboss_user
 		end
 	end
 end
@@ -37,7 +37,7 @@ end
 action :delete do
 	if @current_resource.exists
 		converge_by("Delete #{ new_resource }") do
-			delete_Jboss7_user
+			delete_jboss_user
 		end
 	else
 		Chef::Log.info "#{ @current_resource } doesn't exist - can't delete."
@@ -45,7 +45,7 @@ action :delete do
 end
 
 def load_current_resource
-	@current_resource = Chef::Resource::Jboss7_user.new(@new_resource.name)
+	@current_resource = Chef::Resource::Jboss7user.new(@new_resource.name)
 	@current_resource.user_name(@new_resource.user_name)
 	@current_resource.password(@new_resource.password)
 
@@ -75,7 +75,7 @@ def user_exists?(name)
 	end
 end
 
-def create_Jboss7_user
+def create_jboss_user
 	cmdStr = "echo #{ @current_resource.name }=#{ @current_resource.password } >> #{USR_FILE_PATH}"
 	cmd = Mixlib::ShellOut.new(cmdStr)
 	cmd.run_command
@@ -86,7 +86,7 @@ def create_Jboss7_user
 	new_resource.updated_by_last_action(true)
 end
 
-def delete_Jboss7_user
+def delete_jboss_user
 	usertmpfile="/opt/jboss/standalone/configuration/mgmt-users.properties.tmp"
 	cmdStr = "sed -i '/^#{ @current_resource.name }\=.*/d' #{ USR_FILE_PATH }"
 	cmd = Mixlib::ShellOut.new(cmdStr)
