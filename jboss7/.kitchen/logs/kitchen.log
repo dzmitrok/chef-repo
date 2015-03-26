@@ -1,0 +1,170 @@
+I, [2014-05-07T23:40:33.606794 #10176]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-07T23:40:36.769926 #10176]  INFO -- Kitchen: -----> Creating <default-bb-gold>...
+I, [2014-05-07T23:42:22.559080 #10176]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+E, [2014-05-07T23:42:24.301928 #10176] ERROR -- Kitchen: ------Exception-------
+E, [2014-05-07T23:42:24.302428 #10176] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2014-05-07T23:42:24.302428 #10176] ERROR -- Kitchen: Message: Failed to complete #converge action: [SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed]
+E, [2014-05-07T23:42:24.302428 #10176] ERROR -- Kitchen: ---Nested Exception---
+E, [2014-05-07T23:42:24.302428 #10176] ERROR -- Kitchen: Class: Faraday::SSLError
+E, [2014-05-07T23:42:24.302428 #10176] ERROR -- Kitchen: Message: SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
+E, [2014-05-07T23:42:24.302928 #10176] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-05-07T23:42:24.302928 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/net/http.rb:800:in `connect'
+E, [2014-05-07T23:42:24.302928 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/net/http.rb:800:in `block in connect'
+E, [2014-05-07T23:42:24.302928 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/timeout.rb:69:in `timeout'
+E, [2014-05-07T23:42:24.302928 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/timeout.rb:100:in `timeout'
+E, [2014-05-07T23:42:24.302928 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/net/http.rb:800:in `connect'
+E, [2014-05-07T23:42:24.302928 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/net/http.rb:756:in `do_start'
+E, [2014-05-07T23:42:24.302928 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/net/http.rb:745:in `start'
+E, [2014-05-07T23:42:24.302928 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/net/http.rb:1285:in `request'
+E, [2014-05-07T23:42:24.302928 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/net/http.rb:1027:in `get'
+E, [2014-05-07T23:42:24.303428 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/adapter/net_http.rb:78:in `perform_request'
+E, [2014-05-07T23:42:24.303428 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/adapter/net_http.rb:39:in `call'
+E, [2014-05-07T23:42:24.303428 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/request/retry.rb:87:in `call'
+E, [2014-05-07T23:42:24.303428 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/response.rb:8:in `call'
+E, [2014-05-07T23:42:24.303428 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/response.rb:8:in `call'
+E, [2014-05-07T23:42:24.303428 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/rack_builder.rb:139:in `build_response'
+E, [2014-05-07T23:42:24.303428 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/connection.rb:377:in `run_request'
+E, [2014-05-07T23:42:24.303428 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/connection.rb:140:in `get'
+E, [2014-05-07T23:42:24.303428 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/berkshelf-api-client-1.2.0/lib/berkshelf/api_client/connection.rb:62:in `universe'
+E, [2014-05-07T23:42:24.303428 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/berkshelf-3.1.1/lib/berkshelf/source.rb:22:in `build_universe'
+E, [2014-05-07T23:42:24.303929 #10176] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/berkshelf-3.1.1/lib/berkshelf/installer.rb:21:in `block (2 levels) in build_universe'
+E, [2014-05-07T23:42:24.303929 #10176] ERROR -- Kitchen: ----------------------
+I, [2014-05-07T23:47:16.564869 #8364]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-07T23:47:19.876531 #8364]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+E, [2014-05-07T23:53:22.134052 #8364] ERROR -- Kitchen: Converge failed on instance <default-bb-gold>.
+I, [2014-05-08T00:01:34.143353 #5068]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T00:01:37.176353 #5068]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+I, [2014-05-08T00:18:58.424853 #5068]  INFO -- Kitchen: -----> Kitchen is finished. (17m24.28s)
+I, [2014-05-08T00:20:23.201353 #8360]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T00:20:27.168353 #8360]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+I, [2014-05-08T00:20:44.512853 #8360]  INFO -- Kitchen: -----> Kitchen is finished. (0m21.31s)
+I, [2014-05-08T00:20:51.580853 #10924]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T00:20:54.618853 #10924]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+I, [2014-05-08T00:21:06.862853 #10924]  INFO -- Kitchen: -----> Kitchen is finished. (0m15.28s)
+I, [2014-05-08T00:23:09.587544 #2244]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T00:23:12.685164 #2244]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+I, [2014-05-08T00:24:19.968118 #2244]  INFO -- Kitchen: -----> Kitchen is finished. (1m10.38s)
+I, [2014-05-08T00:27:05.551228 #6488]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T00:27:08.620841 #6488]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+I, [2014-05-08T00:27:21.206858 #6488]  INFO -- Kitchen: -----> Kitchen is finished. (0m15.65s)
+I, [2014-05-08T00:33:53.949891 #9652]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T00:33:56.960493 #9652]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+E, [2014-05-08T00:34:02.942189 #9652] ERROR -- Kitchen: Converge failed on instance <default-bb-gold>.
+I, [2014-05-08T00:36:10.160628 #2336]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T00:36:13.180231 #2336]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+E, [2014-05-08T00:36:31.636922 #2336] ERROR -- Kitchen: Converge failed on instance <default-bb-gold>.
+I, [2014-05-08T00:37:12.819157 #9544]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T00:37:15.838261 #9544]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+I, [2014-05-08T00:37:38.578308 #9544]  INFO -- Kitchen: -----> Kitchen is finished. (0m25.76s)
+I, [2014-05-08T00:40:40.910267 #10620]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T00:40:43.962377 #10620]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+I, [2014-05-08T00:40:56.247334 #10620]  INFO -- Kitchen: -----> Kitchen is finished. (0m15.34s)
+I, [2014-05-08T00:43:52.389555 #10924]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T00:43:55.429663 #10924]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+I, [2014-05-08T00:44:07.771631 #10924]  INFO -- Kitchen: -----> Kitchen is finished. (0m15.38s)
+I, [2014-05-08T00:47:35.401648 #11224]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T00:47:38.492767 #11224]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+I, [2014-05-08T00:47:50.767221 #11224]  INFO -- Kitchen: -----> Kitchen is finished. (0m15.37s)
+I, [2014-05-08T08:38:24.423151 #8408]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T08:38:27.657869 #8408]  INFO -- Kitchen: -----> Destroying <default-bb-gold>...
+I, [2014-05-08T08:38:36.700115 #8408]  INFO -- Kitchen: -----> Kitchen is finished. (0m12.28s)
+I, [2014-05-08T08:38:42.625859 #2628]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T08:38:45.551820 #2628]  INFO -- Kitchen: -----> Creating <default-bb-gold>...
+I, [2014-05-08T08:39:47.472852 #2628]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+E, [2014-05-08T08:45:28.413487 #2628] ERROR -- Kitchen: Converge failed on instance <default-bb-gold>.
+I, [2014-05-08T09:14:45.350915 #10108]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T09:14:48.410527 #10108]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+E, [2014-05-08T09:14:51.341613 #10108] ERROR -- Kitchen: ------Exception-------
+E, [2014-05-08T09:14:51.342113 #10108] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2014-05-08T09:14:51.342113 #10108] ERROR -- Kitchen: Message: Failed to complete #converge action: [SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed]
+E, [2014-05-08T09:14:51.342113 #10108] ERROR -- Kitchen: ---Nested Exception---
+E, [2014-05-08T09:14:51.342113 #10108] ERROR -- Kitchen: Class: Faraday::SSLError
+E, [2014-05-08T09:14:51.342113 #10108] ERROR -- Kitchen: Message: SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
+E, [2014-05-08T09:14:51.342113 #10108] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-05-08T09:14:51.342113 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/net/http.rb:800:in `connect'
+E, [2014-05-08T09:14:51.342113 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/net/http.rb:800:in `block in connect'
+E, [2014-05-08T09:14:51.342113 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/timeout.rb:69:in `timeout'
+E, [2014-05-08T09:14:51.342613 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/timeout.rb:100:in `timeout'
+E, [2014-05-08T09:14:51.342613 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/net/http.rb:800:in `connect'
+E, [2014-05-08T09:14:51.342613 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/net/http.rb:756:in `do_start'
+E, [2014-05-08T09:14:51.342613 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/net/http.rb:745:in `start'
+E, [2014-05-08T09:14:51.342613 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/net/http.rb:1285:in `request'
+E, [2014-05-08T09:14:51.342613 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/1.9.1/net/http.rb:1027:in `get'
+E, [2014-05-08T09:14:51.342613 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/adapter/net_http.rb:78:in `perform_request'
+E, [2014-05-08T09:14:51.342613 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/adapter/net_http.rb:39:in `call'
+E, [2014-05-08T09:14:51.343114 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/request/retry.rb:87:in `call'
+E, [2014-05-08T09:14:51.343114 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/response.rb:8:in `call'
+E, [2014-05-08T09:14:51.343114 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/response.rb:8:in `call'
+E, [2014-05-08T09:14:51.343114 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/rack_builder.rb:139:in `build_response'
+E, [2014-05-08T09:14:51.343114 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/connection.rb:377:in `run_request'
+E, [2014-05-08T09:14:51.343114 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/faraday-0.9.0/lib/faraday/connection.rb:140:in `get'
+E, [2014-05-08T09:14:51.343114 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/berkshelf-api-client-1.2.0/lib/berkshelf/api_client/connection.rb:62:in `universe'
+E, [2014-05-08T09:14:51.343114 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/berkshelf-3.1.1/lib/berkshelf/source.rb:22:in `build_universe'
+E, [2014-05-08T09:14:51.343614 #10108] ERROR -- Kitchen: C:/opscode/chef/embedded/lib/ruby/gems/1.9.1/gems/berkshelf-3.1.1/lib/berkshelf/installer.rb:21:in `block (2 levels) in build_universe'
+E, [2014-05-08T09:14:51.343614 #10108] ERROR -- Kitchen: ----------------------
+I, [2014-05-08T09:14:59.405726 #11092]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T09:15:02.426330 #11092]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+E, [2014-05-08T09:15:19.123168 #11092] ERROR -- Kitchen: Converge failed on instance <default-bb-gold>.
+I, [2014-05-08T09:16:29.730787 #11244]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T09:16:32.756392 #11244]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+I, [2014-05-08T09:38:59.462219 #11244]  INFO -- Kitchen: -----> Kitchen is finished. (22m29.73s)
+I, [2014-05-08T11:51:48.841035 #5588]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T11:51:52.095185 #5588]  INFO -- Kitchen: -----> Destroying <default-bb-gold>...
+I, [2014-05-08T11:52:00.765919 #5588]  INFO -- Kitchen: -----> Kitchen is finished. (0m11.92s)
+I, [2014-05-08T13:11:41.732912 #10972]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-08T13:11:44.653328 #10972]  INFO -- Kitchen: -----> Creating <default-bb-gold>...
+I, [2014-05-12T16:48:03.718367 #9876]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-12T16:48:20.788867 #9876]  INFO -- Kitchen: -----> Destroying <default-bb-gold>...
+I, [2014-05-12T16:48:20.824367 #9876]  INFO -- Kitchen: -----> Kitchen is finished. (0m17.07s)
+I, [2014-05-16T19:49:22.216262 #9388]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-16T19:49:27.524262 #9388]  INFO -- Kitchen: -----> Creating <default-bb-gold>...
+I, [2014-05-16T19:50:31.733262 #9388]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+E, [2014-05-16T20:02:59.315262 #9388] ERROR -- Kitchen: Converge failed on instance <default-bb-gold>.
+I, [2014-05-16T20:09:48.410424 #10772]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-16T20:09:55.095761 #10772]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+E, [2014-05-16T20:10:13.713984 #10772] ERROR -- Kitchen: Converge failed on instance <default-bb-gold>.
+I, [2014-05-16T20:13:45.813895 #9168]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-16T20:13:48.945021 #9168]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+I, [2014-05-16T20:14:21.859103 #9168]  INFO -- Kitchen: -----> Kitchen is finished. (0m36.04s)
+I, [2014-05-16T20:32:55.830853 #2396]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-16T20:32:58.954977 #2396]  INFO -- Kitchen: -----> Destroying <default-ubuntu1204>...
+I, [2014-05-16T20:32:58.959978 #2396]  INFO -- Kitchen: -----> Kitchen is finished. (0m3.13s)
+I, [2014-05-16T20:34:15.288241 #5308]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-16T20:34:18.234830 #5308]  INFO -- Kitchen: -----> Creating <default-ubuntu1204>...
+I, [2014-05-16T20:35:26.528486 #5308]  INFO -- Kitchen: -----> Converging <default-ubuntu1204>...
+E, [2014-05-16T20:37:43.778431 #5308] ERROR -- Kitchen: Converge failed on instance <default-ubuntu1204>.
+I, [2014-05-16T20:38:41.802033 #6736]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-16T20:38:44.981169 #6736]  INFO -- Kitchen: -----> Destroying <default-ubuntu1204>...
+I, [2014-05-16T20:38:53.144301 #6736]  INFO -- Kitchen: -----> Kitchen is finished. (0m11.34s)
+I, [2014-05-16T20:38:59.776627 #6884]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-16T20:39:02.718215 #6884]  INFO -- Kitchen: -----> Creating <default-ubuntu1204>...
+I, [2014-05-16T20:45:52.296615 #6884]  INFO -- Kitchen: -----> Converging <default-ubuntu1204>...
+I, [2014-05-16T20:50:02.815709 #6884]  INFO -- Kitchen: -----> Kitchen is finished. (11m3.04s)
+I, [2014-05-16T20:53:32.088055 #5144]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-16T20:53:35.041645 #5144]  INFO -- Kitchen: -----> Converging <default-ubuntu1204>...
+I, [2014-05-16T20:54:01.992534 #5144]  INFO -- Kitchen: -----> Kitchen is finished. (0m29.90s)
+I, [2014-05-17T09:23:42.775749 #1492]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-17T09:23:45.711622 #1492]  INFO -- Kitchen: -----> Converging <default-ubuntu1204>...
+I, [2014-05-17T09:24:05.031575 #1492]  INFO -- Kitchen: -----> Kitchen is finished. (0m22.25s)
+I, [2014-05-20T10:08:08.153028 #1764]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-20T10:08:13.593116 #1764]  INFO -- Kitchen: -----> Destroying <default-ubuntu1204>...
+I, [2014-05-20T10:08:53.605617 #1764]  INFO -- Kitchen: -----> Kitchen is finished. (0m45.41s)
+I, [2014-05-26T11:43:49.622068 #8692]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-26T11:43:58.148921 #8692]  INFO -- Kitchen: -----> Creating <default-ubuntu1204>...
+I, [2014-05-26T11:45:40.244125 #8692]  INFO -- Kitchen: -----> Converging <default-ubuntu1204>...
+E, [2014-05-26T11:46:08.557786 #8692] ERROR -- Kitchen: Converge failed on instance <default-ubuntu1204>.
+I, [2014-05-26T11:46:34.948063 #8736]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-26T11:46:39.321438 #8736]  INFO -- Kitchen: -----> Converging <default-ubuntu1204>...
+E, [2014-05-26T11:46:46.243822 #8736] ERROR -- Kitchen: Converge failed on instance <default-ubuntu1204>.
+I, [2014-05-26T12:50:00.004435 #10068]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-26T12:50:03.147448 #10068]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+E, [2014-05-26T12:50:09.980410 #10068] ERROR -- Kitchen: Converge failed on instance <default-bb-gold>.
+I, [2014-05-26T12:50:48.596278 #528]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-26T12:50:51.552641 #528]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+E, [2014-05-26T12:51:00.608880 #528] ERROR -- Kitchen: Converge failed on instance <default-bb-gold>.
+I, [2014-05-26T12:58:45.468897 #8552]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-26T12:58:48.578427 #8552]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+E, [2014-05-26T13:00:31.679543 #8552] ERROR -- Kitchen: Converge failed on instance <default-bb-gold>.
+I, [2014-05-26T13:02:26.503003 #3516]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-05-26T13:02:29.458094 #3516]  INFO -- Kitchen: -----> Converging <default-bb-gold>...
+I, [2014-05-26T13:03:01.385978 #3516]  INFO -- Kitchen: -----> Kitchen is finished. (0m34.88s)

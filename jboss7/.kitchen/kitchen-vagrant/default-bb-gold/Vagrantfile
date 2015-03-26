@@ -1,0 +1,8 @@
+Vagrant.configure("2") do |c|
+  c.vm.box = "bb-gold"
+  c.vm.box_url = "http://localhost/ubuntu1204.box"
+  c.vm.hostname = "default-bb-gold.vagrantup.com"
+  c.vm.synced_folder ".", "/vagrant", disabled: true
+  c.vm.provider :virtualbox do |p|
+  end
+end

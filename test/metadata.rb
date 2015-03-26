@@ -1,0 +1,10 @@
+name             'test'
+maintainer       'Dzmitry_Vasilyeu'
+maintainer_email 'Dzmitry_Vasilyeu'
+license          'All rights reserved'
+description      'Installs/Configures jboss7'
+long_description 'Installs/Configures jboss7'
+version          '0.1.0'
+
+depends 'apt'
+depends 'java'
