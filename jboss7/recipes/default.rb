@@ -22,7 +22,7 @@ user jboss_user do
 	comment "jboss User"
 	home "/home/#{jboss_user}"
 	shell "/bin/bash"
-	supports :manage_home => true
+	supports :manage_home => true 
 end
 
 remote_file "#{jboss_home}/#{tarball_name}.tar.gz" do
@@ -51,31 +51,13 @@ link "#{jboss_home}/jboss" do
 	to "#{jboss_home}/#{tarball_name}"
 end
 
-directory "#{jboss_home}/jboss-as" do
-	owner jboss_user
-	group jboss_user
-	mode "0755"
-	recursive true
-end
-
-template "/etc/jboss-as/jboss-as.conf" do
- source "jboss-as.conf"
- owner jboss_user
- group jboss_user
- mode "0755"
- variables({
- :jboss_user => node['jboss7']['jboss_user']
- :jboss_home => node"#{jboss_home}/#{tarball_name}"
- })
-end
-
 template "/etc/init.d/jboss" do
-  source "jboss-init-CentOS.erb"
+  source "jboss-init-debian.erb"
   mode 0775
   owner "root"
   group "root"
   variables({
-	:jboss_user => node['jboss7']['jboss_user']
+	:jboss_user => node[:jboss7][:jboss_user]
   })
   notifies :enable, "service[jboss]", :delayed
   notifies :restart, "service[jboss]", :delayed
@@ -83,37 +65,31 @@ end
 
 template "#{jboss_home}/jboss/standalone/configuration/standalone.xml" do
 	source "standalone_xml.erb"
-	owner jboss_user
-	group jboss_user
+	owner "web"
+	group "web"
 	mode "0644"
 	variables({
-      :mgmt_bind_addr  => node['jboss7']['mgmt_bind_addr'],
-      :public_bind_addr  => node['jboss7']['public_bind_addr'],
-      :unsecure_bind_addr  => node['jboss7']['unsecure_bind_addr'],
-      :ajp_port  => node['jboss7']['ajp_port'],
-      :http_port  => node['jboss7']['http_port'],
-      :https_port  => node['jboss7']['https_port']
+      :mgmt_bind_addr  => node[:jboss7][:mgmt_bind_addr],
+      :public_bind_addr  => node[:jboss7][:public_bind_addr],
+      :unsecure_bind_addr  => node[:jboss7][:unsecure_bind_addr],
+      :ajp_port  => node[:jboss7][:ajp_port],
+      :http_port  => node[:jboss7][:http_port],
+      :https_port  => node[:jboss7][:https_port]
       })
 	notifies :restart, "service[jboss]", :delayed
 end
 
 template "#{jboss_home}/jboss/bin/standalone.conf" do
 	source "standalone_conf.erb"
-	owner jboss_user
-	group jboss_user
+	owner "web"
+	group "web"
 	mode "0644"
 	variables({
-      :jvm_min_mem  => node['jboss7']['jvm_min_mem'],
-      :jvm_max_mem  => node['jboss7']['jvm_max_mem'],
-      :jvm_perm_mem  => node['jboss7']['jvm_perm_mem'],
-      :jvm_extra_ops => node['jboss7']['jvm_extra_ops']
+      :jvm_min_mem  => node[:jboss7][:jvm_min_mem],
+      :jvm_max_mem  => node[:jboss7][:jvm_max_mem],
+      :jvm_perm_mem  => node[:jboss7][:jvm_perm_mem],
+      :jvm_extra_ops => node[:jboss7][:jvm_extra_ops]
       })
-	notifies :restart, "service[jboss]", :delayed
-end
-
-jboss7_user node['jboss7']['admin_user'] do
-	password node['jboss7']['admin_pass']
-	action :create
 	notifies :restart, "service[jboss]", :delayed
 end
 
