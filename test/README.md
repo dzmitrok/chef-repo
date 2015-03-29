@@ -1,8 +1,8 @@
-# test-cookbook
+  # test-cookbook
 
 This is a JBoss 7 cookbook. It's still in development. Feel free to contribute.
 
-V. 0.11.0   - Added a test_user provider to create JBoss 7 standalone mgmt users.
+V. 0.11.0   - Added a jboss7_user provider to create JBoss 7 standalone mgmt users.
             - Added sane defaults for bind addresses.
 
 V. 0.10.2   - I realize I forgot to include sane defaults for the port numbers. Now added.
