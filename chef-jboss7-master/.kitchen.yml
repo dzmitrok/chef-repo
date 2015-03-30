@@ -6,13 +6,13 @@ provisioner:
   name: chef_solo
 
 platforms:
-- name: bb-gold
-  driver_config:
-    box: bb-gold
-    box_url: http://localhost/ubuntu1204.box
+  - name: ubuntu-12.04
+  - name: centos-6.4
 
 suites:
   - name: default
     run_list:
+
       - recipe[jboss7::default]
+
     attributes:
