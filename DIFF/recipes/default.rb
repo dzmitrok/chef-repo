@@ -20,11 +20,25 @@ ruby_block "check_diff_command_output" do
       #cmd = "diff -r -I '^#.*' '/r02/helloworld' '/r02/helloworld_Modified'"
       diff_command_out = shell_out(cmd)
       if diff_command_out.stdout == 0
-       puts "#{diff['SourceFolder']} + "and" + #{diff['DestinFolder']} "are alike""
+       #puts "#{diff['SourceFolder']} + "and" + #{diff['DestinFolder']} "are alike""
+          log 'same' do
+            message '#{diff['SourceFolder']} and  #{diff['DestinFolder']} are alike'
+            level: info
+          end
+       end
       elseif diff_command_out.stdout ==1
-       puts "#{diff['SourceFolder']} + "and" + #{diff['DestinFolder']} "are different""
+       #puts "#{diff['SourceFolder']} + "and" + #{diff['DestinFolder']} "are different""
+          log 'different' do
+            message '#{diff['SourceFolder']} and {diff['DestinFolder']} are different'
+            level: info
+          end
+       end
       else
-       puts "There was something wrong with the diff command"
+       #puts "There was something wrong with the diff command"
+          log 'troubles' do
+            message 'There was something wrong with the diff command'
+            level: info
+          end
       end
     end
     action :run
